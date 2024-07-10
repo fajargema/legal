@@ -13,7 +13,16 @@
     @stack('style')
     <link rel="stylesheet" href="{{ asset('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ asset('assets/vendors/simple-datatables/style.css') }}">
+
+    <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+    <script src="{{ asset('assets/js/vendors.js') }}"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>

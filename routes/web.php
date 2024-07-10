@@ -17,6 +17,8 @@ Auth::routes();
 Route::name('admin.')->prefix('admin')->group(function () {
     Route::middleware(['isAdmin'])->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('index');
+
+        Route::resource('legal', App\Http\Controllers\Admin\LegalController::class);
     });
 });
 
