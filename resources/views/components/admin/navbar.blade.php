@@ -13,12 +13,16 @@
                     <div class="avatar me-1">
                         <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
                     </div>
-                    <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
+                    <div class="d-none d-md-block d-lg-inline-block">{{ Auth::user()->name }}</div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="#"><i data-feather="settings"></i> Change Password</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><i data-feather="log-out"></i> Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </li>
         </ul>
