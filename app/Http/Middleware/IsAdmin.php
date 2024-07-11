@@ -19,7 +19,7 @@ class IsAdmin
         if (Auth::user() && Auth::user()->roles == "admin") {
             return $next($request);
         } else if (Auth::user() && Auth::user()->roles == "user") {
-            return redirect('/legal');
+            return redirect('/user');
         } else if (Auth::user() && Auth::user()->roles == "owner") {
             return redirect('/owner');
         }

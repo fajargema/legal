@@ -22,9 +22,11 @@ Route::name('admin.')->prefix('admin')->group(function () {
     });
 });
 
-Route::name('legal.')->prefix('legal')->group(function () {
+Route::name('user.')->prefix('user')->group(function () {
     Route::middleware(['isUser'])->group(function () {
         Route::get('/', [App\Http\Controllers\User\DashboardController::class, 'index'])->name('index');
+
+        Route::resource('legal', App\Http\Controllers\User\LegalController::class);
     });
 });
 

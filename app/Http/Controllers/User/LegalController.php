@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Legal;
@@ -16,7 +16,7 @@ class LegalController extends Controller
     {
         $data = Legal::with('user')->get();
 
-        return view('pages.admin.legal.index', compact('data'));
+        return view('pages.user.legal.index', compact('data'));
     }
 
     /**
@@ -24,7 +24,7 @@ class LegalController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.legal.create');
+        return view('pages.user.legal.create');
     }
 
     /**
@@ -41,9 +41,9 @@ class LegalController extends Controller
             $data['user_id'] = auth()->id();
             Legal::create($data);
 
-            return redirect()->route('admin.legal.index')->with('success', 'Legal berhasil ditambahkan!!');
+            return redirect()->route('user.legal.index')->with('success', 'Legal berhasil ditambahkan!!');
         } catch (Exception $e) {
-            return redirect()->route('admin.legal.index')->with('error', 'Legal Gagal ditambahkan!!');
+            return redirect()->route('user.legal.index')->with('error', 'Legal Gagal ditambahkan!!');
         }
     }
 
@@ -54,7 +54,7 @@ class LegalController extends Controller
     {
         $data = Legal::with(['user'])->findOrFail($id);
 
-        return view('pages.admin.legal.detail', compact('data'));
+        return view('pages.user.legal.detail', compact('data'));
     }
 
     /**
@@ -64,7 +64,7 @@ class LegalController extends Controller
     {
         $data = Legal::with(['user'])->findOrFail($id);
 
-        return view('pages.admin.legal.edit', compact('data'));
+        return view('pages.user.legal.edit', compact('data'));
     }
 
     /**
@@ -83,9 +83,9 @@ class LegalController extends Controller
 
             $legal->update($data);
 
-            return redirect()->route('admin.legal.index')->with('success', 'Legal berhasil diupdate!!');
+            return redirect()->route('user.legal.index')->with('success', 'Legal berhasil diupdate!!');
         } catch (Exception $e) {
-            return redirect()->route('admin.legal.index')->with('error', 'Legal Gagal diupdate!!');
+            return redirect()->route('user.legal.index')->with('error', 'Legal Gagal diupdate!!');
         }
     }
 
@@ -94,14 +94,6 @@ class LegalController extends Controller
      */
     public function destroy(string $id)
     {
-        try {
-            $legal = Legal::with(['user'])->findOrFail($id);
-
-            $legal->delete();
-
-            return redirect()->route('admin.legal.index')->with('success', 'Legal berhasil dihapus!!');
-        } catch (Exception $e) {
-            return redirect()->route('admin.legal.index')->with('error', 'Legal Gagal dihapus!!');
-        }
+        //
     }
 }
