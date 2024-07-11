@@ -9,6 +9,13 @@
 
 <li class='sidebar-title'>Menu</li>
 
+<li class="sidebar-item {{ request()->routeIs('user.residence.*') ? 'active' : '' }}">
+    <a href="{{ route('user.residence.index') }}" class="sidebar-link">
+        <i data-feather="layout" width="20"></i>
+        <span>Perumahan</span>
+    </a>
+</li>
+
 <li class="sidebar-item {{ request()->routeIs('user.legal.*') ? 'active' : '' }}">
     <a href="{{ route('user.legal.index') }}" class="sidebar-link">
         <i data-feather="layout" width="20"></i>

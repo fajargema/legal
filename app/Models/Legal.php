@@ -13,10 +13,16 @@ class Legal extends Model
         'name',
         'category',
         'user_id',
+        'residence_id'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function residence()
+    {
+        return $this->belongsTo(Residence::class);
     }
 }

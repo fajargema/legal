@@ -26,6 +26,7 @@ Route::name('user.')->prefix('user')->group(function () {
     Route::middleware(['isUser'])->group(function () {
         Route::get('/', [App\Http\Controllers\User\DashboardController::class, 'index'])->name('index');
 
+        Route::resource('residence', App\Http\Controllers\User\ResidenceController::class);
         Route::resource('legal', App\Http\Controllers\User\LegalController::class);
     });
 });
