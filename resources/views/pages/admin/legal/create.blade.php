@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Create Legal')
+@section('title', 'Tambah Legal')
 
 @section('content')
 <div class="page-title">

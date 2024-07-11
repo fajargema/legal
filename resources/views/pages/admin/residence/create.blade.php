@@ -11,8 +11,8 @@
         <div class="col-12 col-md-6 order-md-2 order-first">
             <nav aria-label="breadcrumb" class='breadcrumb-header'>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('user.index') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('user.residence.index') }}">Data Perumahan</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('admin.residence.index') }}">Data Perumahan</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Tambah</li>
                 </ol>
             </nav>
@@ -25,7 +25,7 @@
     </div>
     <div class="card-content">
         <div class="card-body">
-            <form class="form form-vertical" method="POST" action="{{ route('user.residence.store') }}">
+            <form class="form form-vertical" method="POST" action="{{ route('admin.residence.store') }}">
                 @csrf
                 <div class="form-body">
                     <div class="row">

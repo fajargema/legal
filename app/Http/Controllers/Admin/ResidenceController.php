@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Residence;
@@ -16,7 +16,7 @@ class ResidenceController extends Controller
     {
         $data = Residence::select('id', 'name')->get();
 
-        return view('pages.user.residence.index', compact('data'));
+        return view('pages.admin.residence.index', compact('data'));
     }
 
     /**
@@ -24,7 +24,7 @@ class ResidenceController extends Controller
      */
     public function create()
     {
-        return view('pages.user.residence.create');
+        return view('pages.admin.residence.create');
     }
 
     /**
@@ -39,9 +39,9 @@ class ResidenceController extends Controller
             $data = $request->all();
             Residence::create($data);
 
-            return redirect()->route('user.residence.index')->with('success', 'Perumahan berhasil ditambahkan!!');
+            return redirect()->route('admin.residence.index')->with('success', 'Perumahan berhasil ditambahkan!!');
         } catch (Exception $e) {
-            return redirect()->route('user.residence.index')->with('error', 'Perumahan Gagal ditambahkan!!');
+            return redirect()->route('admin.residence.index')->with('error', 'Perumahan Gagal ditambahkan!!');
         }
     }
 
@@ -60,7 +60,7 @@ class ResidenceController extends Controller
     {
         $data = Residence::findOrFail($id);
 
-        return view('pages.user.residence.edit', compact('data'));
+        return view('pages.admin.residence.edit', compact('data'));
     }
 
     /**
@@ -78,9 +78,9 @@ class ResidenceController extends Controller
 
             $residence->update($data);
 
-            return redirect()->route('user.residence.index')->with('success', 'Perumahan berhasil diupdate!!');
+            return redirect()->route('admin.residence.index')->with('success', 'Perumahan berhasil diupdate!!');
         } catch (Exception $e) {
-            return redirect()->route('user.residence.index')->with('error', 'Perumahan Gagal diupdate!!');
+            return redirect()->route('admin.residence.index')->with('error', 'Perumahan Gagal diupdate!!');
         }
     }
 
@@ -94,9 +94,9 @@ class ResidenceController extends Controller
 
             $residence->delete();
 
-            return redirect()->route('user.residence.index')->with('success', 'Perumahan berhasil dihapus!!');
+            return redirect()->route('admin.residence.index')->with('success', 'Perumahan berhasil dihapus!!');
         } catch (Exception $e) {
-            return redirect()->route('user.residence.index')->with('error', 'Perumahan Gagal dihapus!!');
+            return redirect()->route('admin.residence.index')->with('error', 'Perumahan Gagal dihapus!!');
         }
     }
 }

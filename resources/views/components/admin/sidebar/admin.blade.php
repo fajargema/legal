@@ -8,6 +8,14 @@
 </li>
 
 <li class='sidebar-title'>Menu</li>
+
+<li class="sidebar-item {{ request()->routeIs('admin.residence.*') ? 'active' : '' }}">
+    <a href="{{ route('admin.residence.index') }}" class="sidebar-link">
+        <i data-feather="layout" width="20"></i>
+        <span>Perumahan</span>
+    </a>
+</li>
+
 <li class="sidebar-item has-sub {{ request()->routeIs('admin.legal.*') ? 'active' : '' }}">
     <a href="#" class="sidebar-link">
         <i data-feather="briefcase" width="20"></i>
