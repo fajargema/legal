@@ -8,10 +8,19 @@
 </li>
 
 <li class='sidebar-title'>Menu</li>
-
-<li class="sidebar-item {{ request()->routeIs('admin.legal.*') ? 'active' : '' }}">
-    <a href="{{ route('admin.legal.index') }}" class="sidebar-link">
-        <i data-feather="layout" width="20"></i>
+<li class="sidebar-item has-sub {{ request()->routeIs('admin.legal.*') ? 'active' : '' }}">
+    <a href="#" class="sidebar-link">
+        <i data-feather="briefcase" width="20"></i>
         <span>Legal</span>
     </a>
+
+    <ul class="submenu {{ request()->routeIs('admin.legal.*') ? 'active' : '' }}">
+        <li>
+            <a href="{{ route('admin.legal.index') }}">Legal</a>
+        </li>
+
+        <li>
+            <a href="{{ route('admin.legal.list-delete-request') }}">Pengajuan Hapus</a>
+        </li>
+    </ul>
 </li>

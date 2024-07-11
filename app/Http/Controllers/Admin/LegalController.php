@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\DeleteLegal;
 use App\Models\Legal;
+use App\Models\Residence;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -24,7 +26,9 @@ class LegalController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.legal.create');
+        $residences = Residence::select('id', 'name')->get();
+
+        return view('pages.admin.legal.create', compact('residences'));
     }
 
     /**
@@ -33,6 +37,7 @@ class LegalController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'residence_id' => 'required',
             'name' => 'required|string',
             'category' => 'required|string',
         ]);
@@ -62,9 +67,10 @@ class LegalController extends Controller
      */
     public function edit(string $id)
     {
+        $residences = Residence::select('id', 'name')->get();
         $data = Legal::with(['user'])->findOrFail($id);
 
-        return view('pages.admin.legal.edit', compact('data'));
+        return view('pages.admin.legal.edit', compact('data', 'residences'));
     }
 
     /**
@@ -73,6 +79,7 @@ class LegalController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
+            'residence_id' => 'required',
             'name' => 'required|string',
             'category' => 'required|string',
         ]);
@@ -98,6 +105,28 @@ class LegalController extends Controller
             $legal = Legal::with(['user'])->findOrFail($id);
 
             $legal->delete();
+
+            return redirect()->route('admin.legal.index')->with('success', 'Legal berhasil dihapus!!');
+        } catch (Exception $e) {
+            return redirect()->route('admin.legal.index')->with('error', 'Legal Gagal dihapus!!');
+        }
+    }
+
+    public function listDeleteReq()
+    {
+        $data = DeleteLegal::with(['legal', 'user'])->get();
+
+        return view('pages.admin.legal.delete', compact('data'));
+    }
+
+    public function deleteLegalByReq(string $id)
+    {
+        try {
+            $legal = Legal::with(['user'])->findOrFail($id);
+            $delete_legal = DeleteLegal::where('legal_id', $id)->first();
+
+            $legal->delete();
+            $delete_legal->delete();
 
             return redirect()->route('admin.legal.index')->with('success', 'Legal berhasil dihapus!!');
         } catch (Exception $e) {

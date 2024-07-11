@@ -30,6 +30,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama</th>
+                        <th>Perumahan</th>
                         <th>Dibuat Oleh</th>
                         <th>Kategori</th>
                         <th>Aksi</th>
@@ -40,7 +41,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
-
+                        <td>{{ $item->residence->name }}</td>
                         <td>{{ $item->user->name }}</td>
                         <td>
                             @if ($item->category == 'karyawan')
@@ -61,6 +62,11 @@
                                     data-toggle="tooltip" title='Edit'>
                                     <i data-feather="edit"></i>
                                 </a>
+                                <button class="btn btn-danger shadow btn-sm sharp" data-toggle="tooltip" title="Delete"
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal{{ $item->id }}">
+                                    <i data-feather="trash"></i>
+                                </button>
+                                @include('pages.user.legal.modal.delete')
                             </div>
                         </td>
                     </tr>

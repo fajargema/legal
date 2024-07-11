@@ -32,9 +32,26 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="first-name-vertical">Nama Lengkap</label>
-                                <input type="text" id="first-name-vertical" class="form-control" name="name"
-                                    placeholder="Nama Lengkap" value="{{ old('name') ?? $data->name }}">
+                                <label>Nama Perumahan</label>
+                                <select class="form-select" name="residence_id">
+                                    <option selected>Pilih Perumahan</option>
+                                    @foreach ($residences as $residence)
+                                    <option value="{{ $residence->id }}" {{ (old('residence_id')==$residence->id ||
+                                        $data->residence_id
+                                        ==
+                                        $residence->id) ? 'selected' : '' }}>
+                                        {{ $residence->name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Nama Lengkap</label>
+                                <input type="text" class="form-control" name="name" placeholder="Nama Lengkap"
+                                    value="{{ old('name') ?? $data->name }}">
                             </div>
                         </div>
                         <div class="col-12">

@@ -18,9 +18,6 @@
 
     <link rel="stylesheet" href="{{ asset('assets/vendors/simple-datatables/style.css') }}">
 
-    <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
-    <script src="{{ asset('assets/js/vendors.js') }}"></script>
-
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -62,6 +59,9 @@
     <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    <script src="{{ asset('assets/vendors/simple-datatables/simple-datatables.js') }}"></script>
+    <script src="{{ asset('assets/js/vendors.js') }}"></script>
 
     <script>
         //sweetalert for success or error message

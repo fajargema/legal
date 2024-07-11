@@ -31,11 +31,23 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="first-name-vertical">Nama Lengkap</label>
-                                <input type="text" id="first-name-vertical" class="form-control" name="name"
-                                    placeholder="Nama Lengkap">
+                                <label>Nama Perumahan</label>
+                                <select class="form-select" name="residence_id">
+                                    <option selected>Pilih Perumahan</option>
+                                    @foreach ($residences as $residence)
+                                    <option value="{{ $residence->id }}">{{ $residence->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Nama Lengkap</label>
+                                <input type="text" class="form-control" name="name" placeholder="Nama Lengkap">
+                            </div>
+                        </div>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label class="form-label">Kategori</label>
