@@ -110,8 +110,7 @@ class LegalController extends Controller
             'reason' => 'required|string',
         ]);
         try {
-            $legal = Legal::with(['user'])->findOrFail($id);
-            $deleteLegal = DeleteLegal::where('legal_id', $id)->first();
+            $deleteLegal = DeleteLegal::with('user', 'legal')->where('legal_id', $id)->first();
             if (isset($deleteLegal)) {
                 return redirect()->route('user.legal.index')->with('error', 'Kamu sudah mengajukan hapus pada data ini!!');
             } else {

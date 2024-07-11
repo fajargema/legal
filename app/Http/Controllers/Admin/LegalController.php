@@ -119,11 +119,23 @@ class LegalController extends Controller
         return view('pages.admin.legal.delete', compact('data'));
     }
 
+    public function cancelDeleteLegal(string $id)
+    {
+        try {
+            $delete_legal = DeleteLegal::with('user', 'legal')->findOrFail($id);
+            $delete_legal->delete();
+
+            return redirect()->route('admin.legal.index')->with('success', 'Pengajuan Hapus Legal berhasil dibatalkan!!');
+        } catch (Exception $e) {
+            return redirect()->route('admin.legal.index')->with('error', 'Pengajuan Hapus Legal Gagal dibatalkan!!');
+        }
+    }
+
     public function deleteLegalByReq(string $id)
     {
         try {
             $legal = Legal::with(['user'])->findOrFail($id);
-            $delete_legal = DeleteLegal::where('legal_id', $id)->first();
+            $delete_legal = DeleteLegal::with('user', 'legal')->where('legal_id', $id)->first();
 
             $legal->delete();
             $delete_legal->delete();

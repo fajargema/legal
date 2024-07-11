@@ -41,6 +41,15 @@
                         <td>{{ $item->reason }}</td>
                         <td>
                             <div class="d-flex">
+                                <form method="POST" style="margin-right: 2%"
+                                    action="{{ route('admin.legal.cancel-delete', $item->id) }}">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-primary shadow btn-sm sharp show_confirm"
+                                        data-toggle="tooltip" title='Cancel'>
+                                        <i data-feather="x"></i>
+                                    </button>
+                                </form>
                                 <form method="POST"
                                     action="{{ route('admin.legal.delete-by-request', $item->legal->id) }}">
                                     @csrf
