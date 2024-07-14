@@ -34,6 +34,7 @@ Route::name('user.')->prefix('user')->group(function () {
         Route::resource('residence', App\Http\Controllers\User\ResidenceController::class);
         Route::resource('legal', App\Http\Controllers\User\LegalController::class);
         Route::post('legal/request-delete/{id}', [App\Http\Controllers\User\LegalController::class, 'requestDelete'])->name('legal.request-delete');
+        Route::put('legal/edit-document/{id}', [App\Http\Controllers\User\LegalController::class, 'editDocument'])->name('legal.edit-document');
     });
 });
 

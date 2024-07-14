@@ -58,8 +58,22 @@ class LegalController extends Controller
     public function show(string $id)
     {
         $data = Legal::with(['user'])->findOrFail($id);
+        $documents1 = [
+            'kartu_konsumen' => 'Kartu Konsumen',
+            'mpp' => 'Memo Persetujuan Penjualan',
+            'fpa' => 'Form Pengajuan Akad',
+            'sp3k' => 'Surat Penegasan Persetujuan Penyediaan Kredit',
+            'data_diri' => 'Data Diri',
+        ];
+        $documents2 = [
+            'pk' => 'Pernyataan Kredit',
+            'sertifikat' => 'Sertifikat',
+            'spr' => 'Surat Pernyataan Rumah',
+            'bphtb' => 'Bukti Pembayaran BPHTB',
+            'ajb' => 'Akta Jual Beli',
+        ];
 
-        return view('pages.user.legal.detail', compact('data'));
+        return view('pages.user.legal.detail', compact('data', 'documents1', 'documents2'));
     }
 
     /**
@@ -122,6 +136,37 @@ class LegalController extends Controller
             return redirect()->route('user.legal.index')->with('success', 'Pengajuan Hapus Legal Berhasil!!');
         } catch (Exception $e) {
             return redirect()->route('user.legal.index')->with('error', 'Pengajuan Hapus Legal Gagal!!');
+        }
+    }
+
+    public function editDocument(Request $request, string $id)
+    {
+        $request->validate([
+            'doc' => 'required|mimes:pdf,docx|max:5048',
+        ]);
+        try {
+            $legal = Legal::with(['user'])->findOrFail($id);
+
+            $documents = ['kartu_konsumen', 'mpp', 'fpa', 'sp3k', 'data_diri', 'pk', 'sertifikat', 'spr', 'bphtb', 'ajb'];
+
+            foreach ($documents as $document) {
+                if ($document == $request->btname) {
+                    $data = $request->all();
+                    if (isset($legal->$document)) {
+                        unlink("storage/dokumen/" . $legal->$document);
+                    }
+
+                    $doc = $request->file('doc');
+                    $doc->storeAs('public/dokumen', $doc->hashName());
+                    $data[$document] = $doc->hashName();
+
+                    $legal->update($data);
+                }
+            }
+
+            return redirect()->back()->with('success', 'Dokumen berhasil diupdate!!');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Dokumen Gagal diupdate!!');
         }
     }
 }

@@ -90,26 +90,6 @@
                 </div>
             </div>
 
-            <a href="{{ asset('storage/dokumen/' . $data->mpp) }}" target="_blank"
-                class="btn icon icon-left btn-danger"><i data-feather="file-text"></i> Memo Persetujuan Penjualan</a>
-
-            <a href="{{ asset('storage/dokumen/' . $data->sp3k) }}" target="_blank"
-                class="btn icon icon-left btn-danger"><i data-feather="file-text"></i> Surat Penegasan Persetujuan
-                Penyediaan Kredit</a>
-
-            <a href="{{ asset('storage/dokumen/' . $data->data_diri) }}" target="_blank"
-                class="btn icon icon-left btn-danger"><i data-feather="file-text"></i> Data Diri</a>
-
-            <a href="{{ asset('storage/dokumen/' . $data->sertifikat) }}" target="_blank"
-                class="btn icon icon-left btn-danger"><i data-feather="file-text"></i> Sertifikat</a>
-
-            <a href="{{ asset('storage/dokumen/' . $data->bphtb) }}" target="_blank"
-                class="btn icon icon-left btn-danger"><i data-feather="file-text"></i> Bea Perolehan Hak atas Tanah dan
-                Bangunan</a>
-
-            <a href="{{ asset('storage/dokumen/' . $data->ajb) }}" target="_blank"
-                class="btn icon icon-left btn-danger"><i data-feather="file-text"></i> Akta Jual Beli</a>
-
         </div>
     </div>
 
