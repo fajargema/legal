@@ -16,9 +16,9 @@
     </a>
 </li>
 
-{{-- <li class="sidebar-item {{ request()->routeIs('user.legal.*') ? 'active' : '' }}">
-    <a href="{{ route('user.legal.index') }}" class="sidebar-link">
+<li class="sidebar-item {{ request()->routeIs('owner.legal.*') ? 'active' : '' }}">
+    <a href="{{ route('owner.legal.index') }}" class="sidebar-link">
         <i data-feather="layout" width="20"></i>
         <span>Legal</span>
     </a>
-</li> --}}
+</li>

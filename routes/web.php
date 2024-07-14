@@ -43,5 +43,7 @@ Route::name('owner.')->prefix('owner')->group(function () {
         Route::get('/', [App\Http\Controllers\Owner\DashboardController::class, 'index'])->name('index');
 
         Route::get('/residence', [App\Http\Controllers\Owner\ResidenceController::class, 'index'])->name('residence.index');
+        Route::get('/legal', [App\Http\Controllers\Owner\LegalController::class, 'index'])->name('legal.index');
+        Route::get('/legal/{id}', [App\Http\Controllers\Owner\LegalController::class, 'show'])->name('legal.show');
     });
 });
