@@ -41,5 +41,7 @@ Route::name('user.')->prefix('user')->group(function () {
 Route::name('owner.')->prefix('owner')->group(function () {
     Route::middleware(['isOwner'])->group(function () {
         Route::get('/', [App\Http\Controllers\Owner\DashboardController::class, 'index'])->name('index');
+
+        Route::get('/residence', [App\Http\Controllers\Owner\ResidenceController::class, 'index'])->name('residence.index');
     });
 });
