@@ -25,7 +25,8 @@
     </div>
     <div class="card-content">
         <div class="card-body">
-            <form class="form form-vertical" method="POST" action="{{ route('admin.legal.store') }}">
+            <form class="form form-vertical" method="POST" action="{{ route('admin.legal.store') }}"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="form-body">
                     <div class="row">
@@ -63,6 +64,76 @@
                                         <span class="selectgroup-button">Wiraswasta</span>
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Kartu Konsumen</label>
+                                <input type="file" class="form-control" name="kartu_konsumen">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Memo Persetujuan Penjualan</label>
+                                <input type="file" class="form-control" name="mpp">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Form Pengajuan Akad</label>
+                                <input type="file" class="form-control" name="fpa">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Surat Penegasan Persetujuan Penyediaan Kredit</label>
+                                <input type="file" class="form-control" name="sp3k">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Data Diri</label>
+                                <input type="file" class="form-control" name="data_diri">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Persetujuan Konsumen</label>
+                                <input type="file" class="form-control" name="pk">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Sertifikat</label>
+                                <input type="file" class="form-control" name="sertifikat">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Surat Penawaran Rumah</label>
+                                <input type="file" class="form-control" name="spr">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Bea Perolehan Hak atas Tanah dan Bangunan</label>
+                                <input type="file" class="form-control" name="bphtb">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Akta Jual Beli</label>
+                                <input type="file" class="form-control" name="ajb">
                             </div>
                         </div>
 

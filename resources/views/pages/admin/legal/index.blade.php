@@ -31,6 +31,7 @@
                         <th>No.</th>
                         <th>Nama</th>
                         <th>Dibuat Oleh</th>
+                        <th>Perumahan</th>
                         <th>Kategori</th>
                         <th>Aksi</th>
                     </tr>
@@ -40,8 +41,8 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
-
                         <td>{{ $item->user->name }}</td>
+                        <td>{{ $item->residence->name }}</td>
                         <td>
                             @if ($item->category == 'karyawan')
                             <span class="badge bg-info">Karyawan</span>

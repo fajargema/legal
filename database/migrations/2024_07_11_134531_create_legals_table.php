@@ -20,6 +20,16 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
             $table->string('category');
+            $table->string('kartu_konsumen');
+            $table->string('mpp');
+            $table->string('fpa');
+            $table->string('sp3k');
+            $table->string('data_diri');
+            $table->string('pk');
+            $table->string('sertifikat');
+            $table->string('spr');
+            $table->string('bphtb');
+            $table->string('ajb');
 
             $table->timestamps();
         });

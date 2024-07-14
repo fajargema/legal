@@ -13,7 +13,17 @@ class Legal extends Model
         'name',
         'category',
         'user_id',
-        'residence_id'
+        'residence_id',
+        'kartu_konsumen',
+        'mpp',
+        'fpa',
+        'sp3k',
+        'data_diri',
+        'pk',
+        'sertifikat',
+        'spr',
+        'bphtb',
+        'ajb',
     ];
 
     public function user()
