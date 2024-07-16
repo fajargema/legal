@@ -26,6 +26,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama Perumahan</th>
+                        <th>Alamat Perumahan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +34,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
+                        <td>{{ $item->address }}</td>
                     </tr>
                     @endforeach
 
