@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
             'username' => 'owner',
             'email' => 'owner@gmail.com',
             'roles' => 'owner',
-            'password' => Hash::make('user'),
+            'password' => Hash::make('owner'),
         ]);
     }
 }

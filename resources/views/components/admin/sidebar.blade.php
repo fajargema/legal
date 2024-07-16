@@ -1,7 +1,7 @@
 <div id="sidebar" class='active'>
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
-            <img src="{{ asset('assets/images/logo.svg') }}" alt="" srcset="">
+            <p>TAG</p>
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
