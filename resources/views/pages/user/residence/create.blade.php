@@ -37,6 +37,13 @@
                             </div>
                         </div>
 
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Alamat Perumahan</label>
+                                <textarea name="address" rows="5" class="form-control"></textarea>
+                            </div>
+                        </div>
+
                         <div class="col-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary me-1 mb-1">Tambah</button>
                         </div>

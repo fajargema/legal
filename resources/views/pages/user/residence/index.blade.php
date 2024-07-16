@@ -30,6 +30,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama Perumahan</th>
+                        <th>Alamat</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -38,6 +39,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
+                        <td>{{ $item->address }}</td>
                         <td>
                             <div class="d-flex">
                                 <a href="{{ route('user.residence.edit', $item->id) }}"

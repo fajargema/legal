@@ -40,10 +40,73 @@ class LegalController extends Controller
             'residence_id' => 'required',
             'name' => 'required|string',
             'category' => 'required|string',
+            'kartu_konsumen' => 'mimes:pdf,docx|max:5048',
+            'mpp' => 'mimes:pdf,docx|max:5048',
+            'fpa' => 'mimes:pdf,docx|max:5048',
+            'sp3k' => 'mimes:pdf,docx|max:5048',
+            'data_diri' => 'mimes:pdf,docx|max:5048',
+            'pk' => 'mimes:pdf,docx|max:5048',
+            'sertifikat' => 'mimes:pdf,docx|max:5048',
+            'spr' => 'mimes:pdf,docx|max:5048',
+            'bphtb' => 'mimes:pdf,docx|max:5048',
+            'ajb' => 'mimes:pdf,docx|max:5048',
         ]);
         try {
             $data = $request->all();
+
+            if ($request->hasFile('kartu_konsumen')) {
+                $kartu_konsumen = $request->file('kartu_konsumen');
+                $kartu_konsumen->storeAs('public/dokumen', $kartu_konsumen->hashName());
+                $data['kartu_konsumen'] = $kartu_konsumen->hashName();
+            }
+            if ($request->hasFile('mpp')) {
+                $mpp = $request->file('mpp');
+                $mpp->storeAs('public/dokumen', $mpp->hashName());
+                $data['mpp'] = $mpp->hashName();
+            }
+            if ($request->hasFile('fpa')) {
+                $fpa = $request->file('fpa');
+                $fpa->storeAs('public/dokumen', $fpa->hashName());
+                $data['fpa'] = $fpa->hashName();
+            }
+            if ($request->hasFile('sp3k')) {
+                $sp3k = $request->file('sp3k');
+                $sp3k->storeAs('public/dokumen', $sp3k->hashName());
+                $data['sp3k'] = $sp3k->hashName();
+            }
+            if ($request->hasFile('data_diri')) {
+                $data_diri = $request->file('data_diri');
+                $data_diri->storeAs('public/dokumen', $data_diri->hashName());
+                $data['data_diri'] = $data_diri->hashName();
+            }
+            if ($request->hasFile('pk')) {
+                $pk = $request->file('pk');
+                $pk->storeAs('public/dokumen', $pk->hashName());
+                $data['pk'] = $pk->hashName();
+            }
+            if ($request->hasFile('sertifikat')) {
+                $sertifikat = $request->file('sertifikat');
+                $sertifikat->storeAs('public/dokumen', $sertifikat->hashName());
+                $data['sertifikat'] = $sertifikat->hashName();
+            }
+            if ($request->hasFile('spr')) {
+                $spr = $request->file('spr');
+                $spr->storeAs('public/dokumen', $spr->hashName());
+                $data['spr'] = $spr->hashName();
+            }
+            if ($request->hasFile('bphtb')) {
+                $bphtb = $request->file('bphtb');
+                $bphtb->storeAs('public/dokumen', $bphtb->hashName());
+                $data['bphtb'] = $bphtb->hashName();
+            }
+            if ($request->hasFile('ajb')) {
+                $ajb = $request->file('ajb');
+                $ajb->storeAs('public/dokumen', $ajb->hashName());
+                $data['ajb'] = $ajb->hashName();
+            }
+
             $data['user_id'] = auth()->id();
+
             Legal::create($data);
 
             return redirect()->route('user.legal.index')->with('success', 'Legal berhasil ditambahkan!!');

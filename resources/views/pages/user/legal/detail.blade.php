@@ -46,8 +46,14 @@
                         @foreach ($documents1 as $key => $value)
                         <tr>
                             <td><b>{{ $value }}</b></td>
-                            <td><a href="{{ asset('storage/dokumen/' . $data->$key) }}" target="_blank"
-                                    class="btn icon icon-left btn-danger"><i data-feather="file-text"></i></a></td>
+                            <td>
+                                @if (isset($data->$key))
+                                <a href="{{ asset('storage/dokumen/' . $data->$key) }}" target="_blank"
+                                    class="btn icon icon-left btn-danger">
+                                    <i data-feather="file-text"></i>
+                                </a>
+                                @endif
+                            </td>
                             <td>
                                 <form action="{{ route('user.legal.edit-document', $data->id) }}" class="d-flex"
                                     method="POST" enctype="multipart/form-data">
@@ -69,8 +75,14 @@
                         @foreach ($documents2 as $key => $value)
                         <tr>
                             <td><b>{{ $value }}</b></td>
-                            <td><a href="{{ asset('storage/dokumen/' . $data->$key) }}" target="_blank"
-                                    class="btn icon icon-left btn-danger"><i data-feather="file-text"></i></a></td>
+                            <td>
+                                @if (isset($data->$key))
+                                <a href="{{ asset('storage/dokumen/' . $data->$key) }}" target="_blank"
+                                    class="btn icon icon-left btn-danger">
+                                    <i data-feather="file-text"></i>
+                                </a>
+                                @endif
+                            </td>
                             <td>
                                 <form action="{{ route('user.legal.edit-document', $data->id) }}" class="d-flex"
                                     method="POST" enctype="multipart/form-data">

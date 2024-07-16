@@ -31,9 +31,15 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="first-name-vertical">Nama Perumahan</label>
-                                <input type="text" id="first-name-vertical" class="form-control" name="name"
-                                    placeholder="Nama Perumahan">
+                                <label>Nama Perumahan</label>
+                                <input type="text" class="form-control" name="name" placeholder="Nama Perumahan">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Alamat Perumahan</label>
+                                <textarea name="address" rows="5" class="form-control"></textarea>
                             </div>
                         </div>
 

@@ -11,5 +11,6 @@ class Residence extends Model
 
     protected $fillable = [
         'name',
+        'address',
     ];
 }

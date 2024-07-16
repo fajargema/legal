@@ -14,7 +14,7 @@ class ResidenceController extends Controller
      */
     public function index()
     {
-        $data = Residence::select('id', 'name')->get();
+        $data = Residence::select('id', 'name', 'address')->get();
 
         return view('pages.admin.residence.index', compact('data'));
     }
@@ -33,7 +33,8 @@ class ResidenceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string'
+            'name' => 'required|string',
+            'address' => 'required|string'
         ]);
         try {
             $data = $request->all();
@@ -69,7 +70,8 @@ class ResidenceController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => 'required|string'
+            'name' => 'required|string',
+            'address' => 'required|string'
         ]);
         try {
             $residence = Residence::findOrFail($id);
