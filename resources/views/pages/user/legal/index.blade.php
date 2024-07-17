@@ -21,8 +21,30 @@
 <section class="section">
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('user.legal.create') }}" class="btn icon icon-left btn-primary"><i
-                    data-feather="plus"></i> Tambah Legal</a>
+            <div class="row">
+                <div class="col-md-9">
+                    <a href="{{ route('user.legal.create') }}" class="btn icon icon-left btn-primary"><i
+                            data-feather="plus"></i> Tambah Legal</a>
+                </div>
+                <div class="col-md-3">
+                    <form action="{{ route('user.legal.change-residence') }}" method="POST">
+                        @csrf
+                        <div class="d-flex">
+                            <select name="residence_id" class="form-control" style="margin-right: 2%">
+                                <option value="all">Semua Perumahan</option>
+                                @foreach ($residences as $residence)
+                                <option value="{{ $residence->id }}" {{ $residence_id==$residence->id ? 'selected' : ''
+                                    }}>{{ $residence->name }}</option>
+                                @endforeach
+                            </select>
+                            <button type="submit" class="btn btn-info shadow btn-sm" data-toggle="tooltip" title='Save'>
+                                <i data-feather="save"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </div>
         <div class="card-body">
             <table class='table table-striped' id="table1">

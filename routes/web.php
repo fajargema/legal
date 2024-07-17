@@ -41,9 +41,11 @@ Route::name('user.')->prefix('user')->group(function () {
         Route::get('/', [App\Http\Controllers\User\DashboardController::class, 'index'])->name('index');
 
         Route::resource('residence', App\Http\Controllers\User\ResidenceController::class);
+
         Route::resource('legal', App\Http\Controllers\User\LegalController::class);
         Route::post('legal/request-delete/{id}', [App\Http\Controllers\User\LegalController::class, 'requestDelete'])->name('legal.request-delete');
         Route::put('legal/edit-document/{id}', [App\Http\Controllers\User\LegalController::class, 'editDocument'])->name('legal.edit-document');
+        Route::post('legal/filter/residence', [App\Http\Controllers\User\LegalController::class, 'changeResidence'])->name('legal.change-residence');
     });
 });
 
