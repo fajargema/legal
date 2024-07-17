@@ -17,8 +17,10 @@ class LegalController extends Controller
     public function index()
     {
         $data = Legal::with('user')->get();
+        $residences = Residence::select('id', 'name')->get();
+        $residence_id = "all";
 
-        return view('pages.admin.legal.index', compact('data'));
+        return view('pages.admin.legal.index', compact('data', 'residences', 'residence_id'));
     }
 
     /**
@@ -252,6 +254,19 @@ class LegalController extends Controller
             return redirect()->back()->with('success', 'Dokumen berhasil diupdate!!');
         } catch (Exception $e) {
             return redirect()->back()->with('error', 'Dokumen Gagal diupdate!!');
+        }
+    }
+
+    public function changeResidence(Request $request)
+    {
+        $residence_id = $request->residence_id;
+        if ($residence_id == "all") {
+            return redirect()->route('admin.legal.index');
+        } else {
+            $data = Legal::with(['user', 'residence'])->where('residence_id', $residence_id)->get();
+            $residences = Residence::select('id', 'name')->get();
+
+            return view('pages.admin.legal.index', compact('data', 'residences', 'residence_id'));
         }
     }
 }

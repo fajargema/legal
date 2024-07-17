@@ -29,6 +29,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
         Route::put('legal/edit-document/{id}', [App\Http\Controllers\Admin\LegalController::class, 'editDocument'])->name('legal.edit-document');
         Route::delete('legal/cancel/delete/{id}', [App\Http\Controllers\Admin\LegalController::class, 'cancelDeleteLegal'])->name('legal.cancel-delete');
         Route::delete('legal/delete/request/{id}', [App\Http\Controllers\Admin\LegalController::class, 'deleteLegalByReq'])->name('legal.delete-by-request');
+        Route::post('legal/filter/residence', [App\Http\Controllers\Admin\LegalController::class, 'changeResidence'])->name('legal.change-residence');
 
         Route::resource('user', App\Http\Controllers\Admin\UserController::class);
     });
