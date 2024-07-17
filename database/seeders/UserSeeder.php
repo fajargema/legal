@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'email' => 'admin@gmail.com',
             'roles' => 'admin',
+            'position' => 'Manajer Operasional',
             'password' => Hash::make('admin'),
         ]);
 
@@ -28,6 +29,7 @@ class UserSeeder extends Seeder
             'username' => 'user',
             'email' => 'user@gmail.com',
             'roles' => 'user',
+            'position' => 'Legal Officer',
             'password' => Hash::make('user'),
         ]);
 
@@ -37,6 +39,7 @@ class UserSeeder extends Seeder
             'username' => 'owner',
             'email' => 'owner@gmail.com',
             'roles' => 'owner',
+            'position' => 'Pemilik Perusahaan',
             'password' => Hash::make('owner'),
         ]);
     }
