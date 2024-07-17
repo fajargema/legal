@@ -48,6 +48,12 @@
                         <td>{{ $item->position }}</td>
                         <td>
                             <div class="d-flex">
+                                <button class="btn btn-dark shadow btn-sm sharp" data-toggle="tooltip"
+                                    style="margin-right: 2%" title="Reset Password" data-bs-toggle="modal"
+                                    data-bs-target="#resetModal{{ $item->id }}">
+                                    <i data-feather="tool"></i>
+                                </button>
+                                @include('pages.admin.user.modal.reset')
                                 <a href="{{ route('admin.user.edit', $item->id) }}"
                                     class="btn btn-primary shadow btn-sm sharp" style="margin-right: 2%"
                                     data-toggle="tooltip" title='Edit'>

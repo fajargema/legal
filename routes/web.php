@@ -32,6 +32,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
         Route::post('legal/filter/residence', [App\Http\Controllers\Admin\LegalController::class, 'changeResidence'])->name('legal.change-residence');
 
         Route::resource('user', App\Http\Controllers\Admin\UserController::class);
+        Route::put('user/reset-password/{id}', [App\Http\Controllers\Admin\UserController::class, 'resetPassword'])->name('user.reset-password');
     });
 });
 

@@ -106,4 +106,21 @@ class UserController extends Controller
             return redirect()->route('admin.user.index')->with('error', 'Pengguna Gagal dihapus!!');
         }
     }
+
+    public function resetPassword(Request $request, string $id)
+    {
+        $request->validate([
+            'password' => 'required|string'
+        ]);
+        try {
+            $user = User::findOrFail($id);
+            $data = $request->all();
+            $data['password'] = bcrypt($data['password']);
+            $user->update($data);
+
+            return redirect()->route('admin.user.index')->with('success', 'Password berhasil direset!!');
+        } catch (Exception $e) {
+            return redirect()->route('admin.user.index')->with('error', 'Password Gagal direset!!');
+        }
+    }
 }
