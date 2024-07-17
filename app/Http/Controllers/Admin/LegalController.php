@@ -113,7 +113,6 @@ class LegalController extends Controller
 
             return redirect()->route('admin.legal.index')->with('success', 'Legal berhasil ditambahkan!!');
         } catch (Exception $e) {
-            dd($e->getMessage());
             return redirect()->route('admin.legal.index')->with('error', 'Legal Gagal ditambahkan!!');
         }
     }
