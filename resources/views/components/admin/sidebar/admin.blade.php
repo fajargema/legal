@@ -33,6 +33,13 @@
     </ul>
 </li>
 
+<li class="sidebar-item {{ request()->routeIs('admin.report.*') ? 'active' : '' }}">
+    <a href="{{ route('admin.report.index') }}" class="sidebar-link">
+        <i data-feather="layout" width="20"></i>
+        <span>Report</span>
+    </a>
+</li>
+
 <li class="sidebar-item {{ request()->routeIs('admin.user.*') ? 'active' : '' }}">
     <a href="{{ route('admin.user.index') }}" class="sidebar-link">
         <i data-feather="layout" width="20"></i>

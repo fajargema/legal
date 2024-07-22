@@ -22,6 +22,7 @@ Route::name('admin.')->prefix('admin')->group(function () {
     Route::middleware(['isAdmin'])->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('index');
 
+        Route::get('report', [App\Http\Controllers\Admin\ReportController::class, 'index'])->name('report.index');
         Route::get('legal/request-delete', [App\Http\Controllers\Admin\LegalController::class, 'listDeleteReq'])->name('legal.list-delete-request');
         Route::resource('residence', App\Http\Controllers\Admin\ResidenceController::class);
 
@@ -30,6 +31,8 @@ Route::name('admin.')->prefix('admin')->group(function () {
         Route::delete('legal/cancel/delete/{id}', [App\Http\Controllers\Admin\LegalController::class, 'cancelDeleteLegal'])->name('legal.cancel-delete');
         Route::delete('legal/delete/request/{id}', [App\Http\Controllers\Admin\LegalController::class, 'deleteLegalByReq'])->name('legal.delete-by-request');
         Route::post('legal/filter/residence', [App\Http\Controllers\Admin\LegalController::class, 'changeResidence'])->name('legal.change-residence');
+
+        Route::post('legal/export-excel', [App\Http\Controllers\Admin\ReportController::class, 'exportExcel'])->name('legal.export-excel');
 
         Route::resource('user', App\Http\Controllers\Admin\UserController::class);
         Route::put('user/reset-password/{id}', [App\Http\Controllers\Admin\UserController::class, 'resetPassword'])->name('user.reset-password');
