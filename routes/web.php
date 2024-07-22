@@ -43,12 +43,16 @@ Route::name('user.')->prefix('user')->group(function () {
     Route::middleware(['isUser'])->group(function () {
         Route::get('/', [App\Http\Controllers\User\DashboardController::class, 'index'])->name('index');
 
+        Route::get('report', [App\Http\Controllers\User\ReportController::class, 'index'])->name('report.index');
+
         Route::resource('residence', App\Http\Controllers\User\ResidenceController::class);
 
         Route::resource('legal', App\Http\Controllers\User\LegalController::class);
         Route::post('legal/request-delete/{id}', [App\Http\Controllers\User\LegalController::class, 'requestDelete'])->name('legal.request-delete');
         Route::put('legal/edit-document/{id}', [App\Http\Controllers\User\LegalController::class, 'editDocument'])->name('legal.edit-document');
         Route::post('legal/filter/residence', [App\Http\Controllers\User\LegalController::class, 'changeResidence'])->name('legal.change-residence');
+
+        Route::post('legal/export-excel', [App\Http\Controllers\User\ReportController::class, 'exportExcel'])->name('legal.export-excel');
     });
 });
 
@@ -56,10 +60,14 @@ Route::name('owner.')->prefix('owner')->group(function () {
     Route::middleware(['isOwner'])->group(function () {
         Route::get('/', [App\Http\Controllers\Owner\DashboardController::class, 'index'])->name('index');
 
+        Route::get('report', [App\Http\Controllers\Owner\ReportController::class, 'index'])->name('report.index');
+
         Route::get('/residence', [App\Http\Controllers\Owner\ResidenceController::class, 'index'])->name('residence.index');
 
         Route::get('/legal', [App\Http\Controllers\Owner\LegalController::class, 'index'])->name('legal.index');
         Route::get('/legal/{id}', [App\Http\Controllers\Owner\LegalController::class, 'show'])->name('legal.show');
         Route::post('legal/filter/residence', [App\Http\Controllers\Owner\LegalController::class, 'changeResidence'])->name('legal.change-residence');
+
+        Route::post('legal/export-excel', [App\Http\Controllers\Owner\ReportController::class, 'exportExcel'])->name('legal.export-excel');
     });
 });

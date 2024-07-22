@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Exports\ReportsExport;
 use App\Http\Controllers\Controller;
@@ -14,7 +14,7 @@ class ReportController extends Controller
     public function index()
     {
         $residences = Residence::select('id', 'name')->get();
-        return view('pages.admin.report.index', compact('residences'));
+        return view('pages.user.report.index', compact('residences'));
     }
 
     public function exportExcel(Request $request)

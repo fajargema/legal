@@ -22,3 +22,10 @@
         <span>Legal</span>
     </a>
 </li>
+
+<li class="sidebar-item {{ request()->routeIs('user.report.*') ? 'active' : '' }}">
+    <a href="{{ route('user.report.index') }}" class="sidebar-link">
+        <i data-feather="layout" width="20"></i>
+        <span>Report</span>
+    </a>
+</li>

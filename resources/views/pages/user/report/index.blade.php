@@ -11,7 +11,7 @@
         <div class="col-12 col-md-6 order-md-2 order-first">
             <nav aria-label="breadcrumb" class='breadcrumb-header'>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('user.index') }}">Dashboard</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Report Excel</li>
                 </ol>
             </nav>
@@ -24,7 +24,7 @@
             Lengkapi data berikut untuk membuat laporan excel
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.legal.export-excel') }}" method="POST">
+            <form action="{{ route('user.legal.export-excel') }}" method="POST">
                 @csrf
                 <div class="row">
 

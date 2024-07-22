@@ -22,3 +22,10 @@
         <span>Legal</span>
     </a>
 </li>
+
+<li class="sidebar-item {{ request()->routeIs('owner.report.*') ? 'active' : '' }}">
+    <a href="{{ route('owner.report.index') }}" class="sidebar-link">
+        <i data-feather="layout" width="20"></i>
+        <span>Report</span>
+    </a>
+</li>
