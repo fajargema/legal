@@ -57,7 +57,7 @@
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label class="form-label">Kategori</label>
+                                <label class="form-label">Pekerjaan</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
                                         <input type="radio" name="category" value="karyawan" class="selectgroup-input"

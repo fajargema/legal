@@ -35,7 +35,7 @@
                     <h5>Dibuat Oleh</h5>
                     <p>{{ $data->user->name }}</p>
 
-                    <h5>Kategori</h5>
+                    <h5>Pekerjaan</h5>
                     <p>{{ $data->category }}</p>
                 </div>
             </div>

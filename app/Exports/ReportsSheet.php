@@ -25,7 +25,7 @@ class ReportsSheet implements FromCollection, WithHeadings, WithTitle, WithColum
             'No.',
             'Perumahan',
             'Nama',
-            'Kategori',
+            'Pekerjaan',
             'Kartu Konsumen',
             'Memo Persetujuan Penjualan',
             'Form Pengajuan Akad',
@@ -36,7 +36,7 @@ class ReportsSheet implements FromCollection, WithHeadings, WithTitle, WithColum
             'Surat Pernyataan Rumah',
             'Bukti Pembayaran BPHTB',
             'Akta Jual Beli',
-            'Tanggal Dibuat'
+            'Terakhir Diupdate'
         ];
     }
 

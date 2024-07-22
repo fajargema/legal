@@ -53,7 +53,7 @@
                         <th>Nama</th>
                         <th>Perumahan</th>
                         <th>Dibuat Oleh</th>
-                        <th>Kategori</th>
+                        <th>Pekerjaan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
