@@ -57,7 +57,8 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h4 class="card-title">Legal Terakhir</h4>
                 <div class="d-flex ">
-                    <a href="" class="btn btn-primary">More</a>
+                    <a href="{{ route('user.legal.index') }}" class="btn btn-primary" data-toggle="tooltip"
+                        title='Data Selengkapnya'>Data Selengkapnya</a>
                 </div>
             </div>
             <div class="card-body px-0 pb-0">
@@ -67,6 +68,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Nama</th>
+                                <th>Pekerjaan</th>
                                 <th>Perumahan</th>
                                 <th>Dibuat Oleh</th>
                                 <th>Kategori</th>
@@ -77,6 +79,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
+                                <td>{{ $item->category }}</td>
                                 <td>{{ $item->residence->name }}</td>
                                 <td>{{ $item->user->name }}</td>
                                 <td>

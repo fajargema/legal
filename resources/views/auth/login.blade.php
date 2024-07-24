@@ -9,9 +9,9 @@
             <div class="card pt-4">
                 <div class="card-body">
                     <div class="text-center mb-5">
-                        <img src="{{ asset('assets/images/favicon.svg') }}" height="48" class='mb-4'>
+                        <img src="{{ asset('assets/images/logo-pm.png') }}" height="48" class='mb-4'>
                         <h3>Sign In</h3>
-                        <p>Please sign in to continue to Legal.</p>
+                        <p>PT Purimega Saranaland.</p>
                     </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
