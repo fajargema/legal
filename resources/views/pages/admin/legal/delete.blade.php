@@ -26,6 +26,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama</th>
+                        <th>NIK</th>
                         <th>Diajukan Oleh</th>
                         <th>Alasan</th>
                         <th>Aksi</th>
@@ -36,7 +37,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->legal->name }}</td>
-
+                        <td>{{ $item->legal->nik }}</td>
                         <td>{{ $item->user->name }}</td>
                         <td>{{ $item->reason }}</td>
                         <td>

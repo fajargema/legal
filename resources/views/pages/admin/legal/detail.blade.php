@@ -32,7 +32,7 @@
                     <p>{{ $data->nik }}</p>
 
                     <h5>Perumahan</h5>
-                    <p>{{ $data->residence->name }}</p>
+                    <p>{{ $data->residence->name }} - {{ $data->residence_type }}</p>
                 </div>
                 <div class="col-md-6">
                     <h5>Dibuat Oleh</h5>

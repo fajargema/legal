@@ -10,6 +10,7 @@ class Legal extends Model
     use HasFactory;
 
     protected $fillable = [
+        'residence_type',
         'name',
         'nik',
         'category',

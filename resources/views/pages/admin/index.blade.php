@@ -82,7 +82,7 @@
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->nik }}</td>
                                 <td>{{ $item->category }}</td>
-                                <td>{{ $item->residence->name }}</td>
+                                <td>{{ $item->residence->name }} - {{ $item->residence_type }}</td>
                                 <td>{{ $item->user->name }}</td>
                                 <td>
                                     @if ($item->category == 'karyawan')

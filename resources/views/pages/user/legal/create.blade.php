@@ -44,6 +44,13 @@
 
                         <div class="col-12">
                             <div class="form-group">
+                                <label>Tipe Rumah</label>
+                                <input type="text" class="form-control" name="residence_type" placeholder="Tipe Rumah">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
                                 <label>Nama Lengkap</label>
                                 <input type="text" id="first-name-vertical" class="form-control" name="name"
                                     placeholder="Nama Lengkap">

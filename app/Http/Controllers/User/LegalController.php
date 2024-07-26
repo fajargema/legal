@@ -40,6 +40,7 @@ class LegalController extends Controller
     {
         $request->validate([
             'residence_id' => 'required',
+            'residence_type' => 'required|string',
             'name' => 'required|string',
             'nik' => 'required|string|unique:legals,nik',
             'category' => 'required|string',
@@ -160,6 +161,7 @@ class LegalController extends Controller
     {
         $request->validate([
             'residence_id' => 'required',
+            'residence_type' => 'required|string',
             'name' => 'required|string',
             'nik' => 'required|string|unique:legals,nik,' . $id,
             'category' => 'required|string',

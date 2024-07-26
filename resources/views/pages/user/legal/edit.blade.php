@@ -49,6 +49,14 @@
 
                         <div class="col-12">
                             <div class="form-group">
+                                <label>Tipe Rumah</label>
+                                <input type="text" class="form-control" name="residence_type" placeholder="Tipe Rumah"
+                                    value="{{ old('residence_type') ?? $data->residence_type }}">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
                                 <label>Nama Lengkap</label>
                                 <input type="text" class="form-control" name="name" placeholder="Nama Lengkap"
                                     value="{{ old('name') ?? $data->name }}">
