@@ -52,6 +52,13 @@
 
                         <div class="col-12">
                             <div class="form-group">
+                                <label>NIK</label>
+                                <input type="text" class="form-control" name="nik" placeholder="NIK">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
                                 <label class="form-label">Pekerjaan</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">

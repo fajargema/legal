@@ -13,7 +13,7 @@
                 <div class="modal-body">
                     <label>Nama Lengkap</label>
                     <div class="form-group">
-                        <input type="text" class="form-control" value="{{ $item->name }}" readonly>
+                        <input type="text" class="form-control" value="{{ $item->name }} - {{ $item->nik }}" readonly>
                     </div>
                     <label>Alasan</label>
                     <div class="form-group">

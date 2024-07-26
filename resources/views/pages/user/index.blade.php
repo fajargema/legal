@@ -68,6 +68,7 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Nama</th>
+                                <th>NIK</th>
                                 <th>Pekerjaan</th>
                                 <th>Perumahan</th>
                                 <th>Dibuat Oleh</th>
@@ -79,6 +80,7 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
+                                <td>{{ $item->nik }}</td>
                                 <td>{{ $item->category }}</td>
                                 <td>{{ $item->residence->name }}</td>
                                 <td>{{ $item->user->name }}</td>

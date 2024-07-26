@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(Residence::class)->references('id')->on('residences')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignIdFor(User::class)->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
+            $table->string('nik')->unique();
             $table->string('category');
             $table->string('kartu_konsumen')->nullable();
             $table->string('mpp')->nullable();

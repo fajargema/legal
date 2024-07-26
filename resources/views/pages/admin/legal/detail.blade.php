@@ -28,6 +28,9 @@
                     <h5>Nama Lengkap</h5>
                     <p>{{ $data->name }}</p>
 
+                    <h5>NIK</h5>
+                    <p>{{ $data->nik }}</p>
+
                     <h5>Perumahan</h5>
                     <p>{{ $data->residence->name }}</p>
                 </div>

@@ -54,6 +54,15 @@
                                     value="{{ old('name') ?? $data->name }}">
                             </div>
                         </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>NIK</label>
+                                <input type="text" class="form-control" name="nik" placeholder="NIK"
+                                    value="{{ old('nik') ?? $data->nik }}">
+                            </div>
+                        </div>
+
                         <div class="col-12">
                             <div class="form-group">
                                 <label class="form-label">Pekerjaan</label>

@@ -41,6 +41,7 @@ class LegalController extends Controller
         $request->validate([
             'residence_id' => 'required',
             'name' => 'required|string',
+            'nik' => 'required|string|unique:legals,nik',
             'category' => 'required|string',
             'kartu_konsumen' => 'mimes:pdf,docx|max:5048',
             'mpp' => 'mimes:pdf,docx|max:5048',
@@ -160,6 +161,7 @@ class LegalController extends Controller
         $request->validate([
             'residence_id' => 'required',
             'name' => 'required|string',
+            'nik' => 'required|string|unique:legals,nik,' . $id,
             'category' => 'required|string',
         ]);
         try {

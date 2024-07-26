@@ -11,6 +11,7 @@ class Legal extends Model
 
     protected $fillable = [
         'name',
+        'nik',
         'category',
         'user_id',
         'residence_id',
