@@ -27,7 +27,7 @@
                             data-feather="plus"></i> Tambah Legal</a>
                 </div>
                 <div class="col-md-3">
-                    <form action="{{ route('user.legal.change-residence') }}" method="POST">
+                    {{-- <form action="{{ route('user.legal.change-residence') }}" method="POST">
                         @csrf
                         <div class="d-flex">
                             <select name="residence_id" class="form-control" style="margin-right: 2%">
@@ -41,7 +41,7 @@
                                 <i data-feather="save"></i>
                             </button>
                         </div>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
 

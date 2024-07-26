@@ -21,8 +21,8 @@
 <section class="section">
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('user.residence.create') }}" class="btn icon icon-left btn-primary"><i
-                    data-feather="plus"></i> Tambah Perumahan</a>
+            {{-- <a href="{{ route('user.residence.create') }}" class="btn icon icon-left btn-primary"><i
+                    data-feather="plus"></i> Tambah Perumahan</a> --}}
         </div>
         <div class="card-body">
             <table class='table table-striped' id="table1">
