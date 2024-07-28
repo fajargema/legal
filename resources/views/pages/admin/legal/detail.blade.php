@@ -31,15 +31,19 @@
                     <h5>NIK</h5>
                     <p>{{ $data->nik }}</p>
 
-                    <h5>Perumahan</h5>
-                    <p>{{ $data->residence->name }} - {{ $data->residence_type }}</p>
+                    <h5>Pekerjaan</h5>
+                    <p>{{ $data->category }}</p>
+
                 </div>
                 <div class="col-md-6">
                     <h5>Dibuat Oleh</h5>
                     <p>{{ $data->user->name }}</p>
 
-                    <h5>Pekerjaan</h5>
-                    <p>{{ $data->category }}</p>
+                    <h5>Perumahan</h5>
+                    <p>{{ $data->residence->name }}</p>
+
+                    <h5>Tipe Rumah</h5>
+                    <p>{{ $data->residence_type }}</p>
                 </div>
             </div>
 

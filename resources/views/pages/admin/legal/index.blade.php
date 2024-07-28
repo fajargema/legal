@@ -55,6 +55,7 @@
                         <th>NIK</th>
                         <th>Dibuat Oleh</th>
                         <th>Perumahan</th>
+                        <th>Tipe Rumah</th>
                         <th>Pekerjaan</th>
                         <th>Aksi</th>
                     </tr>
@@ -66,7 +67,8 @@
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->nik }}</td>
                         <td>{{ $item->user->name }}</td>
-                        <td>{{ $item->residence->name }} - {{ $item->residence_type }}</td>
+                        <td>{{ $item->residence->name }}</td>
+                        <td>{{ $item->residence_type }}</td>
                         <td>
                             @if ($item->category == 'karyawan')
                             <span class="badge bg-info">Karyawan</span>

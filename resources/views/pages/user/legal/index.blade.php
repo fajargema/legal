@@ -54,6 +54,7 @@
                         <th>Nama</th>
                         <th>NIK</th>
                         <th>Perumahan</th>
+                        <th>Tipe Rumah</th>
                         <th>Dibuat Oleh</th>
                         <th>Pekerjaan</th>
                         <th>Aksi</th>
@@ -65,7 +66,8 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->nik }}</td>
-                        <td>{{ $item->residence->name }} - {{ $item->residence_type }}</td>
+                        <td>{{ $item->residence->name }}</td>
+                        <td>{{ $item->residence_type }}</td>
                         <td>{{ $item->user->name }}</td>
                         <td>
                             @if ($item->category == 'karyawan')
