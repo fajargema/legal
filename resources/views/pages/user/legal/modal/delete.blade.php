@@ -21,7 +21,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger ml-1" data-bs-dismiss="modal">
+                    <button type="submit" class="btn btn-danger ml-1" data-bs-dismiss="modal"
+                        onclick="return confirm('Apakah kamu yakin?')">
                         <i class="bx bx-check d-block d-sm-none"></i>
                         <span class="d-none d-sm-block">Hapus</span>
                     </button>

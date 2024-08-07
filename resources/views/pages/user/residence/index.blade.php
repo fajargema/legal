@@ -31,7 +31,6 @@
                         <th>No.</th>
                         <th>Nama Perumahan</th>
                         <th>Alamat</th>
-                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,7 +39,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->address }}</td>
-                        <td>
+                        {{-- <td>
                             <div class="d-flex">
                                 <a href="{{ route('user.residence.edit', $item->id) }}"
                                     class="btn btn-primary shadow btn-sm sharp" style="margin-right: 2%"
@@ -51,12 +50,13 @@
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger shadow btn-sm sharp show_confirm"
-                                        data-toggle="tooltip" title='Delete'>
+                                        onclick="return confirm('Apakah kamu yakin?')" data-toggle="tooltip"
+                                        title='Delete'>
                                         <i data-feather="trash"></i>
                                     </button>
                                 </form>
                             </div>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
 

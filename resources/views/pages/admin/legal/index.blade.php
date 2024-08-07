@@ -92,7 +92,8 @@
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger shadow btn-sm sharp show_confirm"
-                                        data-toggle="tooltip" title='Delete'>
+                                        onclick="return confirm('Apakah kamu yakin?')" data-toggle="tooltip"
+                                        title='Delete'>
                                         <i data-feather="trash"></i>
                                     </button>
                                 </form>
